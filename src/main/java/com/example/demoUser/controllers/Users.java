@@ -20,12 +20,12 @@ public class Users {
         return "Added User with id : " + user.toString();
     }
 
-    @GetMapping("/findAllBooks")
+    @GetMapping("/findAllUser")
     public List<User> getBooks() {
         return userRepository.findAll();
     }
 
-    @GetMapping("/findAllBooks/{id}")
+    @GetMapping("/findAllUser/{id}")
     public Optional<User> getBook(@PathVariable int id) {
         return userRepository.findById(id);
     }
