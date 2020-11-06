@@ -15,24 +15,24 @@ public class Users {
     UserRepository userRepository;
 
     @PostMapping("/addUser")
-    public String saveBook(@RequestBody User user) {
+    public String saveUser(@RequestBody User user) {
         userRepository.save(user);
         return "Added User with id : " + user.toString();
     }
 
     @GetMapping("/findAllUser")
-    public List<User> getBooks() {
+    public List<User> getUser() {
         return userRepository.findAll();
     }
 
     @GetMapping("/findAllUser/{id}")
-    public Optional<User> getBook(@PathVariable int id) {
+    public Optional<User> getUser(@PathVariable int id) {
         return userRepository.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteBook(@PathVariable int id) {
+    public String deleteUser(@PathVariable int id) {
         userRepository.deleteById(id);
-        return "book deleted with id : " + id;
+        return "User deleted with id : " + id;
     }
 }
